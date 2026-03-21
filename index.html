@@ -3,495 +3,470 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Automation for Small Business in Perth | innovatr.ai</title>
-  <meta name="description" content="innovatr.ai helps Perth small businesses save time with practical AI automation, workflow setup, lead follow-up systems, and AI support without the jargon. Australia-wide service available." />
+  <title>AI Automation Perth for Small Business | innovatr.ai</title>
+  <meta name="description" content="innovatr.ai helps Perth small businesses save time with AI automation, workflow systems, lead follow-up automation, and practical AI services that improve operations without the jargon." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
-  <meta name="keywords" content="AI automation Perth, AI services Perth, small business AI Perth, AI consultant Perth, workflow automation Perth, AI automation Australia" />
+  <meta name="keywords" content="AI automation Perth, AI services Perth, AI consultant Perth, small business AI Perth, workflow automation Perth, AI automation Australia" />
   <link rel="canonical" href="https://innovatr.ai/" />
-  <meta property="og:title" content="AI Automation for Small Business in Perth | innovatr.ai" />
-  <meta property="og:description" content="Practical AI automation for Perth small businesses. Save time, reduce admin, and improve follow-up with simple systems that actually get used." />
+  <meta property="og:title" content="AI Automation Perth for Small Business | innovatr.ai" />
+  <meta property="og:description" content="Practical AI automation and workflow improvement for Perth small businesses. Save time, reduce admin, and generate more enquiries." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://innovatr.ai/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="AI Automation for Small Business in Perth | innovatr.ai" />
-  <meta name="twitter:description" content="Practical AI automation for Perth small businesses, with Australia-wide support available." />
+  <meta name="twitter:title" content="AI Automation Perth for Small Business | innovatr.ai" />
+  <meta name="twitter:description" content="AI services in Perth for small businesses that want practical automation and better systems." />
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "innovatr.ai",
-      "url": "https://innovatr.ai/",
-      "description": "AI automation and workflow improvement services for small businesses in Perth and across Australia.",
-      "areaServed": [
-        {"@type": "City", "name": "Perth"},
-        {"@type": "Country", "name": "Australia"}
-      ],
-      "serviceType": [
-        "AI automation",
-        "Workflow automation",
-        "Lead follow-up automation",
-        "AI tools setup",
-        "Small business AI consulting"
-      ]
-    }
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "name": "innovatr.ai",
+        "url": "https://innovatr.ai/",
+        "description": "AI automation and workflow improvement services for small businesses in Perth and across Australia.",
+        "areaServed": [
+          {"@type": "City", "name": "Perth"},
+          {"@type": "Country", "name": "Australia"}
+        ],
+        "serviceType": [
+          "AI automation",
+          "Workflow automation",
+          "Lead follow-up automation",
+          "AI tools setup",
+          "AI consulting for small business"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do you work with Perth businesses only?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Perth is our primary focus, especially for local service businesses, but we can also work with businesses across Australia."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What AI services do you offer in Perth?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We help with AI automation, workflow improvement, lead follow-up systems, internal admin processes, AI tool setup, and practical team implementation."
+            }
+          }
+        ]
+      }
+    ]
+  }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root {
+      --bg: #0d1324;
+      --bg-soft: #121a31;
+      --panel: rgba(18, 25, 54, 0.88);
+      --panel-2: rgba(255,255,255,0.06);
+      --text: #edf2ff;
+      --muted: #b7c3e2;
+      --line: rgba(255,255,255,0.1);
+      --brand: #4f7cff;
+      --brand-dark: #2b57d9;
+      --brand-soft: rgba(79,124,255,0.12);
+      --white: #ffffff;
+      --shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #0b1020 0%, #0d1324 100%);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+    .site-header {
+      position: sticky; top: 0; z-index: 30;
+      background: rgba(11, 16, 32, 0.72);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { font-size: 1.35rem; font-weight: 800; letter-spacing: -0.04em; }
+    .brand span { color: var(--brand); }
+    nav { display: flex; align-items: center; gap: 20px; color: var(--muted); }
+    nav a:not(.btn) { position: relative; padding: 6px 0; }
+    nav a:not(.btn)::after {
+      content: ""; position: absolute; left: 0; bottom: -2px; width: 100%; height: 2px;
+      background: linear-gradient(90deg, var(--brand), rgba(79,124,255,0.3)); transform: scaleX(0); transform-origin: left; transition: transform .2s ease;
+    }
+    nav a:not(.btn):hover::after { transform: scaleX(1); }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; padding: 13px 18px; border-radius: 14px;
+      background: var(--brand); color: white; font-weight: 700; border: 0; box-shadow: var(--shadow);
+    }
+    .btn-secondary { background: transparent; border: 1px solid var(--line); color: var(--text); box-shadow: none; }
+    .hero {
+      position: relative; padding: 88px 0 54px;
+      background: radial-gradient(circle at top left, rgba(79,124,255,0.18), transparent 28%), linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 30px; align-items: center; }
+    .eyebrow { margin: 0 0 10px; color: #9fc0ff; font-size: .82rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
+    h1,h2,h3 { margin: 0 0 14px; line-height: 1.08; letter-spacing: -.04em; }
+    h1 { font-size: clamp(2.7rem, 6vw, 4.9rem); max-width: 12ch; }
+    h2 { font-size: clamp(1.9rem, 3.2vw, 3.2rem); }
+    h3 { font-size: 1.2rem; }
+    .lead, .section-text, .subtext { color: var(--muted); font-size: 1.06rem; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin: 28px 0 18px; }
+    .trust-list { list-style: none; padding: 0; margin: 0; display: flex; gap: 16px; flex-wrap: wrap; color: var(--muted); font-weight: 600; }
+    .hero-card, .card, .step, .faq details, .cta-box, .seo-box, .page-plan {
+      background: var(--panel); border: 1px solid var(--line); border-radius: 24px; box-shadow: var(--shadow);
+    }
+    .hero-card { padding: 28px; }
+    .hero-card img, .side-illustration img { width: 100%; height: auto; display: block; }
+    .hero-card { display: grid; gap: 20px; }
+    .mini-list { display: grid; gap: 14px; }
+    .mini-list div { padding: 14px; border-radius: 16px; background: var(--panel-2); border: 1px solid var(--line); }
+    .mini-list span { color: var(--muted); }
+    .section { padding: 88px 0; }
+    .alt { background: rgba(255,255,255,0.02); }
+    .section-heading { display: flex; justify-content: space-between; gap: 20px; align-items: end; margin-bottom: 26px; }
+    .section-heading p { max-width: 480px; color: var(--muted); }
+    .cards { display: grid; gap: 20px; }
+    .three-up { grid-template-columns: repeat(3, minmax(0,1fr)); }
+    .two-up { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .card { padding: 24px; }
+    .card p { margin: 0; color: var(--muted); }
+    .seo-box, .page-plan { padding: 24px; }
+    .list { margin: 0; padding-left: 18px; color: var(--muted); }
+    .steps { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
+    .step { padding: 22px; }
+    .step span {
+      width: 42px; height: 42px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center;
+      background: var(--brand-soft); color: #cbd8ff; font-weight: 800; margin-bottom: 12px;
+    }
+    .step p { margin: 0; color: var(--muted); }
+    .how-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 24px; align-items: center; }
+    .side-illustration { padding: 22px; background: rgba(255,255,255,0.04); border: 1px solid var(--line); border-radius: 22px; }
+    .faq { display: grid; gap: 14px; }
+    .faq details { padding: 18px 20px; }
+    .faq summary { cursor: pointer; font-weight: 700; }
+    .faq p { margin: 10px 0 0; color: var(--muted); }
+    .cta-box { display: grid; grid-template-columns: .95fr 1.05fr; gap: 24px; padding: 28px; }
+    .contact-form { display: grid; gap: 14px; }
+    input, textarea {
+      width: 100%; border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px;
+      font: inherit; color: var(--text); background: rgba(255,255,255,0.04);
+    }
+    textarea { min-height: 130px; resize: vertical; }
+    .footer { padding: 26px 0 40px; color: var(--muted); }
+    .footer-row { display: flex; justify-content: space-between; gap: 16px; }
+    .page-map { display: grid; gap: 14px; }
+    .page-map-item { padding: 16px; border-radius: 16px; background: rgba(255,255,255,0.04); border: 1px solid var(--line); }
+    .page-map-item span { display: block; color: #9fc0ff; font-size: .85rem; margin-bottom: 6px; }
+    .small { font-size: .95rem; color: var(--muted); }
+    @media (max-width: 920px) {
+      .hero-grid, .three-up, .two-up, .how-grid, .cta-box, .section-heading, .steps { grid-template-columns: 1fr; }
+      nav { display: none; }
+    }
+    @media (max-width: 640px) {
+      .container { width: min(1160px, calc(100% - 24px)); }
+      .btn, .btn-secondary { width: 100%; }
+      .hero { padding-top: 56px; }
+      .section { padding: 68px 0; }
+      .trust-list, .footer-row { display: grid; }
+    }
+  </style>
 </head>
 <body>
-  <div class="page-loader" aria-hidden="true">
-    <div class="loader-mark"></div>
-  </div>
-  <div class="bg-animation" aria-hidden="true">
-    <canvas id="particles"></canvas>
-    <span class="orb orb-1"></span>
-    <span class="orb orb-2"></span>
-    <span class="orb orb-3"></span>
-    <span class="grid"></span>
-  </div>
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="#top">innovatr<span>.ai</span></a>
       <nav>
         <a href="#services">Services</a>
-        <a href="#how">How it Works</a>
+        <a href="#perth-seo">SEO Structure</a>
+        <a href="#page-plan">Page Plan</a>
         <a href="#faq">FAQ</a>
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">◐</button>
-        <a href="#contact" class="btn btn-small"><span>Book a Call</span></a>
+        <a href="#contact" class="btn">Book a Call</a>
       </nav>
     </div>
   </header>
 
   <main id="top">
-    <section class="hero reveal is-visible">
+    <section class="hero">
       <div class="container hero-grid">
         <div>
-          <p class="eyebrow">AI automation for Perth small business</p>
-          <h1>AI services in Perth that help small businesses save time and grow faster.</h1>
-          <p class="lead">Most business owners know AI matters, but have no idea where to start. We help Perth small businesses find the simple, useful automations that save time right now — without confusing tech talk. Australia-wide support is also available.</p>
+          <p class="eyebrow">AI automation Perth</p>
+          <h1>AI services in Perth that help small businesses save time and generate more leads.</h1>
+          <p class="lead">innovatr.ai helps Perth small businesses use AI in practical ways: better follow-up, less admin, smoother workflows, and systems that actually get used. Australia-wide support is available, but Perth is our main focus.</p>
           <div class="hero-actions">
-            <a href="#contact" class="btn"><span>Book a Free Discovery Call</span></a>
-            <a href="#how" class="btn btn-secondary"><span>See How It Works</span></a>
+            <a href="#contact" class="btn">Book a Free Discovery Call</a>
+            <a href="#page-plan" class="btn btn-secondary">See SEO Structure</a>
           </div>
           <ul class="trust-list">
             <li>No jargon</li>
-            <li>Small business friendly</li>
-            <li>Practical automation, not hype</li>
+            <li>Built for small business</li>
+            <li>Practical AI systems</li>
           </ul>
         </div>
-        <div class="hero-card visual-card parallax-card">
-          <span class="floating-badge badge-1">AI</span>
-          <span class="floating-badge badge-2">24/7</span>
-          <span class="floating-badge badge-3">Automation</span>
-          <img class="parallax-layer" src="assets/hero-automation.svg" alt="Modern illustration of AI automation and workflow improvements" />
+        <div class="hero-card">
+          <img src="assets/hero-automation.svg" alt="AI automation and workflow improvement illustration for small business" />
           <div class="mini-list">
             <div>
-              <strong>Enquiries</strong>
-              <span>Faster replies and lead follow-up</span>
+              <strong>Lead follow-up automation</strong>
+              <span>Respond faster and stop enquiries going cold.</span>
             </div>
             <div>
-              <strong>Admin</strong>
-              <span>Less manual copy/paste work</span>
+              <strong>Workflow automation</strong>
+              <span>Reduce repetitive tasks and manual copying between systems.</span>
             </div>
             <div>
-              <strong>Operations</strong>
-              <span>Better systems and fewer dropped balls</span>
-            </div>
-            <div>
-              <strong>Marketing</strong>
-              <span>Content, emails, and workflow support</span>
+              <strong>AI setup for small business</strong>
+              <span>Choose and implement useful AI tools without overcomplicating it.</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="problem section reveal">
-      <div class="container narrow center">
-        <p class="eyebrow">The reality for most small businesses</p>
-        <h2>You do not need “AI strategy”. You need useful systems that save time.</h2>
-        <p class="section-text">Most businesses are losing hours every week to repetitive admin, slow follow-up, missed enquiries, manual data entry, and disconnected systems. AI can help — but only if it is set up simply and properly.</p>
-      </div>
-      <div class="container cards three-up">
-        <article class="card">
-          <h3>Too much admin</h3>
-          <p>Quoting, emails, notes, updates, and repetitive tasks eat into real work.</p>
-        </article>
-        <article class="card">
-          <h3>Slow follow-up</h3>
-          <p>Leads go cold when replies are delayed or forgotten.</p>
-        </article>
-        <article class="card">
-          <h3>Too many systems</h3>
-          <p>Your team jumps between apps instead of working from one smooth process.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="services" class="section alt reveal">
+    <section id="services" class="section">
       <div class="container">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">Services</p>
-            <h2>Simple AI automation services in Perth for everyday business problems</h2>
+            <p class="eyebrow">Core services</p>
+            <h2>Perth AI services for everyday business bottlenecks</h2>
           </div>
-          <p>We focus on practical improvements that save time, improve response speed, and reduce manual work.</p>
+          <p>These services are structured to match how small businesses search: AI automation, workflow improvement, and practical AI support.</p>
         </div>
-
         <div class="cards three-up">
           <article class="card">
-            <h3>AI Opportunity Review</h3>
-            <p>We look at how your business currently runs and identify where AI and automation can save time fastest.</p>
+            <h3>AI Automation Perth</h3>
+            <p>Implement practical automation for repetitive admin, lead handling, and business workflows.</p>
           </article>
           <article class="card">
-            <h3>Lead & Enquiry Automation</h3>
-            <p>Help your business respond faster to new enquiries, capture leads, and follow up more consistently.</p>
+            <h3>Workflow Automation Perth</h3>
+            <p>Connect the tools your business already uses so information moves faster and manual work drops.</p>
           </article>
           <article class="card">
-            <h3>Email & Admin Automation</h3>
-            <p>Reduce repetitive admin with smarter email handling, document support, and internal workflows.</p>
+            <h3>AI Consultant Perth</h3>
+            <p>Get practical advice on where AI will actually help your business before you waste time or money.</p>
           </article>
           <article class="card">
-            <h3>Workflow Automation</h3>
-            <p>Connect the tools you already use so information moves automatically and your team does less manual work.</p>
+            <h3>Lead Follow-up Systems</h3>
+            <p>Improve enquiry response speed, lead handling, and follow-up consistency with simple automation.</p>
           </article>
           <article class="card">
             <h3>AI Tools Setup</h3>
-            <p>We help you choose and set up the right AI tools for your business without overcomplicating it.</p>
+            <p>Choose the right AI tools and set them up properly so your team can use them confidently.</p>
           </article>
           <article class="card">
             <h3>Team Training</h3>
-            <p>We show your team how to use AI properly so it becomes useful, safe, and easy to adopt.</p>
+            <p>Train your team so AI becomes useful, safe, and operational rather than confusing and ignored.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section reveal">
+    <section id="perth-seo" class="section alt">
       <div class="container">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">Examples</p>
-            <h2>What this can look like in a real business</h2>
+            <p class="eyebrow">SEO-focused structure</p>
+            <h2>Built to rank for Perth-first service searches</h2>
           </div>
+          <p>This version is structured around the search terms and intent that matter most for a Perth AI services business.</p>
         </div>
-        <div class="cards two-up">
-          <article class="card example-card">
-            <h3>Example 1: Lead follow-up</h3>
-            <p>A customer submits an enquiry. Their details are captured, a response is sent quickly, the lead is logged, and your team is notified to follow up.</p>
-          </article>
-          <article class="card example-card">
-            <h3>Example 2: Quote and admin support</h3>
-            <p>AI helps draft quotes, organise notes, prepare follow-up emails, and reduce the time spent on repetitive office tasks.</p>
-          </article>
-          <article class="card example-card">
-            <h3>Example 3: Customer communication</h3>
-            <p>Common customer questions can be handled faster, with clearer answers and less back-and-forth.</p>
-          </article>
-          <article class="card example-card">
-            <h3>Example 4: Internal workflow</h3>
-            <p>Forms, emails, spreadsheets, and CRMs can work together more smoothly so your team spends less time chasing information.</p>
-          </article>
+        <div class="grid two-up">
+          <div class="seo-box">
+            <h3>Primary keyword targets</h3>
+            <ul class="list">
+              <li>AI automation Perth</li>
+              <li>AI services Perth</li>
+              <li>AI consultant Perth</li>
+              <li>workflow automation Perth</li>
+              <li>small business AI Perth</li>
+              <li>AI automation for small business Australia</li>
+            </ul>
+          </div>
+          <div class="seo-box">
+            <h3>Ranking logic</h3>
+            <ul class="list">
+              <li>Homepage targets the broad Perth service intent</li>
+              <li>Dedicated service pages target narrower commercial searches</li>
+              <li>Location pages target Perth and suburb/service-area intent</li>
+              <li>Internal links push authority from homepage into money pages</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="how" class="section alt reveal">
-      <div class="container how-grid">
-        <div>
-          <div class="section-heading left-stack">
-            <div>
-              <p class="eyebrow">How it works</p>
-              <h2>A simple process from confusion to clarity</h2>
+    <section id="page-plan" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Multi-page plan</p>
+            <h2>The site structure I’d use to rank this properly</h2>
+          </div>
+          <p>This is the page hierarchy I’d build next so the site is not relying on one page alone.</p>
+        </div>
+        <div class="page-plan">
+          <div class="page-map">
+            <div class="page-map-item">
+              <span>Homepage</span>
+              <strong>/</strong>
+              <p class="small">Target: AI automation Perth / AI services Perth / small business AI Perth</p>
+            </div>
+            <div class="page-map-item">
+              <span>Service page</span>
+              <strong>/ai-automation-perth</strong>
+              <p class="small">Target: AI automation Perth</p>
+            </div>
+            <div class="page-map-item">
+              <span>Service page</span>
+              <strong>/workflow-automation-perth</strong>
+              <p class="small">Target: workflow automation Perth</p>
+            </div>
+            <div class="page-map-item">
+              <span>Service page</span>
+              <strong>/ai-consultant-perth</strong>
+              <p class="small">Target: AI consultant Perth</p>
+            </div>
+            <div class="page-map-item">
+              <span>Location page</span>
+              <strong>/perth</strong>
+              <p class="small">Target: AI services Perth / local service intent</p>
+            </div>
+            <div class="page-map-item">
+              <span>Authority / proof page</span>
+              <strong>/case-studies</strong>
+              <p class="small">Used to improve trust, links, and conversion</p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container how-grid">
+        <div>
+          <p class="eyebrow">How it works</p>
+          <h2>A simple process from confusion to useful AI systems</h2>
           <div class="steps">
             <div class="step">
               <span>01</span>
-              <h3>Discovery</h3>
-              <p>We learn how your business works, where time is being wasted, and what problems are worth solving first.</p>
+              <h3>Review</h3>
+              <p>We assess where your business is losing time and where AI can create the fastest gains.</p>
             </div>
             <div class="step">
               <span>02</span>
-              <h3>Plan</h3>
-              <p>We recommend the simplest high-impact AI and automation opportunities for your business.</p>
+              <h3>Prioritise</h3>
+              <p>We recommend the highest-impact workflow, lead, or admin improvements first.</p>
             </div>
             <div class="step">
               <span>03</span>
-              <h3>Build</h3>
-              <p>We set up the automation, connect your systems, and keep it easy to use.</p>
+              <h3>Implement</h3>
+              <p>We set up the tools and automations in a way your business can actually use.</p>
             </div>
             <div class="step">
               <span>04</span>
-              <h3>Support</h3>
-              <p>We refine what is working, train your team, and help you expand over time if needed.</p>
+              <h3>Improve</h3>
+              <p>We refine what works, train your team, and expand only when the first wins are proven.</p>
             </div>
           </div>
         </div>
-        <div class="side-illustration-card">
-          <img src="assets/process-flow.svg" alt="Illustrated workflow showing connected steps and automation flow" />
+        <div class="side-illustration">
+          <img src="assets/process-flow.svg" alt="AI workflow automation process illustration" />
         </div>
       </div>
     </section>
 
-    <section class="section reveal">
-      <div class="container narrow center">
-        <p class="eyebrow">Why innovatr.ai</p>
-        <h2>Built for Perth business owners who want results, not tech lectures.</h2>
-        <p class="section-text">We keep things simple. We explain what matters clearly. We focus on time saved, smoother systems, faster follow-up, and practical implementation your business can actually use. We primarily help Perth small businesses, and we can also work with businesses across Australia.</p>
+    <section class="section">
+      <div class="container section-heading">
+        <div>
+          <p class="eyebrow">Perth service page example</p>
+          <h2>Example service-page angle: AI Automation Perth</h2>
+        </div>
+        <p>This is the tone and structure I’d use for the first dedicated service page.</p>
       </div>
-      <div class="container cards three-up">
+      <div class="container cards two-up">
         <article class="card">
-          <h3>Clear advice</h3>
-          <p>No unnecessary AI jargon. Just what matters and what to do next.</p>
+          <h3>Suggested H1</h3>
+          <p>AI Automation Perth for Small Businesses That Want to Save Time</p>
         </article>
         <article class="card">
-          <h3>Practical setup</h3>
-          <p>We work around the tools your business already uses where possible.</p>
+          <h3>Suggested meta description</h3>
+          <p>Looking for AI automation in Perth? innovatr.ai helps small businesses reduce admin, improve follow-up, and build practical automated systems that save time.</p>
         </article>
         <article class="card">
-          <h3>Focused on time saved</h3>
-          <p>The goal is simple: less manual work and more capacity in the business.</p>
+          <h3>Suggested H2s</h3>
+          <p>What AI automation can do for your business • Common problems we solve • How our Perth AI automation process works • FAQs</p>
+        </article>
+        <article class="card">
+          <h3>Suggested internal links</h3>
+          <p>Link to: Workflow Automation Perth, AI Consultant Perth, Perth page, Case Studies, Contact page.</p>
         </article>
       </div>
     </section>
 
-    <section id="faq" class="section alt reveal">
+    <section id="faq" class="section alt">
       <div class="container">
         <div class="section-heading">
           <div>
             <p class="eyebrow">FAQ</p>
-            <h2>Questions small business owners usually ask</h2>
+            <h2>Questions business owners ask before hiring AI help</h2>
           </div>
         </div>
-        <div class="faq-list">
-          <details>
-            <summary>We do not know anything about AI. Is that a problem?</summary>
-            <p>No. Most of our clients start there. Our job is to make it understandable and useful.</p>
-          </details>
-          <details>
-            <summary>Do we need to change all our systems?</summary>
-            <p>Usually no. We start with what you already use and improve the process around it.</p>
-          </details>
-          <details>
-            <summary>Will AI replace staff?</summary>
-            <p>The goal is usually to help staff work faster and better, not replace them.</p>
-          </details>
-          <details>
-            <summary>What kind of businesses can you help?</summary>
-            <p>Small businesses with repetitive admin, enquiries, customer communication, quoting, or manual workflows are usually a great fit.</p>
-          </details>
+        <div class="faq">
           <details>
             <summary>Do you work with Perth businesses only?</summary>
-            <p>Perth is our primary focus, especially for local service businesses, but we can also work with businesses across Australia.</p>
+            <p>Perth is our main focus, especially for local service businesses, but we can also work with businesses across Australia.</p>
           </details>
           <details>
             <summary>What AI services do you offer in Perth?</summary>
-            <p>We help with AI automation, workflow improvement, lead follow-up systems, internal admin processes, AI tool setup, and practical team implementation.</p>
+            <p>We help with AI automation, workflow improvement, lead follow-up systems, AI tools setup, internal admin systems, and practical implementation support.</p>
+          </details>
+          <details>
+            <summary>We know nothing about AI. Is that a problem?</summary>
+            <p>No. Most small business owners start there. Our job is to make it practical, clear, and useful.</p>
+          </details>
+          <details>
+            <summary>Will AI replace staff?</summary>
+            <p>Usually the goal is not to replace staff. It is to reduce repetitive work and help your team operate faster and better.</p>
           </details>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section cta-section reveal">
+    <section id="contact" class="section">
       <div class="container cta-box">
         <div>
           <p class="eyebrow">Next step</p>
           <h2>Book a free discovery call</h2>
-          <p>We will look at your business, identify practical opportunities, and show you where AI can save time first.</p>
-          <img class="contact-illustration" src="assets/contact-illustration.svg" alt="Illustration representing simple contact and enquiry support" />
+          <p class="subtext">We’ll look at your business, identify practical AI opportunities, and show you what should be automated first.</p>
+          <p class="small">Best fit: Perth service businesses and small business owners who want practical improvement, not hype.</p>
         </div>
-        <form class="contact-form" id="contactForm">
-          <input type="text" id="name" placeholder="Your name" required />
-          <input type="email" id="email" placeholder="Email address" required />
-          <input type="text" id="business" placeholder="Business name" />
-          <textarea id="message" placeholder="What part of your business feels manual or repetitive?" required></textarea>
-          <button type="submit" class="btn"><span>Request a Call</span></button>
-          <p class="form-note">This opens your email app with the enquiry pre-filled.</p>
+        <form class="contact-form">
+          <input type="text" placeholder="Your name" />
+          <input type="email" placeholder="Email address" />
+          <input type="text" placeholder="Business name" />
+          <textarea placeholder="What part of your business feels manual or repetitive?"></textarea>
+          <button type="submit" class="btn">Request a Call</button>
         </form>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="footer">
     <div class="container footer-row">
       <p>© 2026 innovatr.ai</p>
-      <p>Simple AI automation for small business.</p>
+      <p>AI automation for Perth small businesses.</p>
     </div>
   </footer>
-
-  <script>
-    const canvas = document.getElementById('particles');
-    const ctx = canvas.getContext('2d');
-    const parallaxCard = document.querySelector('.parallax-card');
-    const parallaxLayer = document.querySelector('.parallax-layer');
-    const themeToggle = document.getElementById('themeToggle');
-    const contactForm = document.getElementById('contactForm');
-    let particles = [];
-    let w = 0;
-    let h = 0;
-    let dpr = Math.min(window.devicePixelRatio || 1, 2);
-    const mouse = { x: null, y: null, active: false };
-
-    function resize() {
-      w = window.innerWidth;
-      h = window.innerHeight;
-      canvas.width = w * dpr;
-      canvas.height = h * dpr;
-      canvas.style.width = w + 'px';
-      canvas.style.height = h + 'px';
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      createParticles();
-    }
-
-    function createParticles() {
-      const count = Math.max(90, Math.floor(w / 14));
-      particles = Array.from({ length: count }, () => ({
-        x: Math.random() * w,
-        y: 76 + (Math.random() * Math.min(h, 420)),
-        vx: (Math.random() - 0.5) * 0.55,
-        vy: (Math.random() - 0.5) * 0.45,
-        r: Math.random() * 2.8 + 1.1
-      }));
-    }
-
-    function draw() {
-      ctx.clearRect(0, 0, w, h);
-
-      for (const p of particles) {
-        p.x += p.vx;
-        p.y += p.vy;
-
-        if (mouse.active && mouse.x !== null && mouse.y !== null) {
-          const dx = mouse.x - p.x;
-          const dy = mouse.y - p.y;
-          const dist = Math.hypot(dx, dy);
-          if (dist < 180 && dist > 0) {
-            const force = (180 - dist) / 180;
-            p.x -= (dx / dist) * force * 2.6;
-            p.y -= (dy / dist) * force * 2.1;
-          }
-        }
-
-        if (p.x < 0 || p.x > w) p.vx *= -1;
-        if (p.y < 0 || p.y > h) p.vy *= -1;
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(79, 124, 255, 0.88)';
-        ctx.fill();
-      }
-
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const a = particles[i];
-          const b = particles[j];
-          const dx = a.x - b.x;
-          const dy = a.y - b.y;
-          const dist = Math.hypot(dx, dy);
-
-          if (dist < 150) {
-            ctx.beginPath();
-            ctx.moveTo(a.x, a.y);
-            ctx.lineTo(b.x, b.y);
-            ctx.strokeStyle = `rgba(79, 124, 255, ${0.42 * (1 - dist / 150)})`;
-            ctx.lineWidth = 1;
-            ctx.stroke();
-          }
-        }
-
-        if (mouse.active && mouse.x !== null && mouse.y !== null) {
-          const p = particles[i];
-          const mdx = p.x - mouse.x;
-          const mdy = p.y - mouse.y;
-          const mdist = Math.hypot(mdx, mdy);
-          if (mdist < 220) {
-            ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(mouse.x, mouse.y);
-            ctx.strokeStyle = `rgba(79, 124, 255, ${0.56 * (1 - mdist / 220)})`;
-            ctx.lineWidth = 1;
-            ctx.stroke();
-          }
-        }
-      }
-
-      requestAnimationFrame(draw);
-    }
-
-    window.addEventListener('mousemove', (e) => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
-      mouse.active = true;
-
-      if (parallaxCard && parallaxLayer) {
-        const rect = parallaxCard.getBoundingClientRect();
-        const x = ((e.clientX - rect.left) / rect.width) - 0.5;
-        const y = ((e.clientY - rect.top) / rect.height) - 0.5;
-        if (e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom) {
-          parallaxLayer.style.transform = `translate(${x * 18}px, ${y * 18}px) scale(1.02)`;
-          parallaxCard.style.transform = `perspective(1200px) rotateX(${y * -5}deg) rotateY(${x * 6}deg)`;
-        }
-      }
-    });
-
-    window.addEventListener('mouseleave', () => {
-      mouse.active = false;
-      if (parallaxCard && parallaxLayer) {
-        parallaxLayer.style.transform = 'translate(0, 0) scale(1)';
-        parallaxCard.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg)';
-      }
-    });
-
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-        }
-      });
-    }, { threshold: 0.14 });
-
-    reveals.forEach((el) => observer.observe(el));
-
-    const savedTheme = localStorage.getItem('innovatr-theme');
-    if (savedTheme === 'light') {
-      document.body.classList.remove('dark-mode');
-    } else {
-      document.body.classList.add('dark-mode');
-    }
-
-    if (themeToggle) {
-      themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        localStorage.setItem('innovatr-theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
-      });
-    }
-
-    if (contactForm) {
-      contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const business = document.getElementById('business').value.trim();
-        const message = document.getElementById('message').value.trim();
-        const subject = encodeURIComponent('innovatr.ai enquiry from ' + (business || name));
-        const body = encodeURIComponent(
-          `Name: ${name}\nEmail: ${email}\nBusiness: ${business}\n\nWhat feels manual or repetitive:\n${message}`
-        );
-        window.location.href = `mailto:hello@innovatr.ai?subject=${subject}&body=${body}`;
-      });
-    }
-
-    window.addEventListener('load', () => {
-      document.body.classList.add('loaded');
-    });
-
-    window.addEventListener('resize', resize);
-    resize();
-    draw();
-  </script>
 </body>
 </html>
