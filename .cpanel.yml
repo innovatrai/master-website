@@ -1,0 +1,7 @@
+---
+deployment:
+tasks:
+- export DEPLOYPATH=/home1/pixelwhi/public_html/innovatr.ai
+- /bin/cp -R assets $DEPLOYPATH
+- /bin/cp index.html $DEPLOYPATH
+- /bin/cp index-v2.html $DEPLOYPATH
