@@ -6,7 +6,7 @@ const MONDAY_BOARD_ID = 5027383033;
 const MONDAY_API_URL = 'https://api.monday.com/v2';
 const SECRET_FILE = '/home1/pixelwhi/.secrets/monday-token.php';
 const CONFIG_FILE = '/home1/pixelwhi/.secrets/monday-config.php';
-const SUCCESS_REDIRECT = 'index.html?form=success#contact';
+const SUCCESS_REDIRECT = 'thank-you.html';
 const ERROR_REDIRECT = 'index.html?form=error#contact';
 
 function redirectTo(string $location): void
@@ -30,6 +30,17 @@ $name = trim((string) ($_POST['name'] ?? ''));
 $email = trim((string) ($_POST['email'] ?? ''));
 $businessName = trim((string) ($_POST['business_name'] ?? ''));
 $message = trim((string) ($_POST['message'] ?? ''));
+$website = trim((string) ($_POST['website'] ?? ''));
+$formStartedAt = (int) ($_POST['form_started_at'] ?? 0);
+
+if ($website !== '') {
+    redirectTo(SUCCESS_REDIRECT);
+}
+
+if ($formStartedAt > 0 && (time() - $formStartedAt) < 3) {
+    error_log('Monday form spam trap triggered: submitted too quickly');
+    fail();
+}
 
 if ($name === '' || $email === '' || $message === '') {
     fail();

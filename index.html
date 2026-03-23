@@ -171,6 +171,13 @@
       background: rgba(255,255,255,0.04);
       color: var(--text);
     }
+    .hp-field {
+      position: absolute !important;
+      left: -9999px !important;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
     .form-status.is-visible { display: block; }
     .form-status.is-success {
       background: rgba(44, 182, 125, 0.12);
@@ -436,6 +443,11 @@
           <p class="small">Best fit: Perth service businesses and small business owners who want practical improvement, not hype.</p>
         </div>
         <form class="contact-form" action="contact.php" method="post">
+          <div class="hp-field" aria-hidden="true">
+            <label for="website">Website</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+          </div>
+          <input type="hidden" name="form_started_at" id="form-started-at" value="" />
           <input type="text" name="name" placeholder="Your name" required />
           <input type="email" name="email" placeholder="Email address" required />
           <input type="text" name="business_name" placeholder="Business name" />
@@ -458,6 +470,12 @@
     (function () {
       const params = new URLSearchParams(window.location.search);
       const status = document.getElementById('form-status');
+      const startedAt = document.getElementById('form-started-at');
+
+      if (startedAt) {
+        startedAt.value = String(Math.floor(Date.now() / 1000));
+      }
+
       if (!status) return;
 
       const formState = params.get('form');
