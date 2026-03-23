@@ -279,6 +279,36 @@
       width: 100%; border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px;
       font: inherit; color: var(--text); background: rgba(255,255,255,0.04);
     }
+    .radio-group {
+      display: grid;
+      gap: 10px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+    }
+    .radio-group-label {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .radio-options {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .radio-option {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .radio-option input {
+      width: auto;
+      margin: 0;
+      accent-color: var(--brand);
+    }
     textarea { min-height: 130px; resize: vertical; }
     .footer { padding: 26px 0 40px; color: var(--muted); }
     .footer-row { display: flex; justify-content: space-between; gap: 16px; }
@@ -549,7 +579,15 @@
           <input type="hidden" name="form_started_at" id="form-started-at" value="" />
           <input type="text" name="name" placeholder="Your name" required />
           <input type="email" name="email" placeholder="Email address" required />
+          <input type="tel" name="phone" placeholder="Phone number" />
           <input type="text" name="business_name" placeholder="Business name" />
+          <div class="radio-group">
+            <div class="radio-group-label">Preferred contact method</div>
+            <div class="radio-options">
+              <label class="radio-option"><input type="radio" name="contact_preference" value="Email" checked /> Email</label>
+              <label class="radio-option"><input type="radio" name="contact_preference" value="Phone" /> Phone</label>
+            </div>
+          </div>
           <textarea name="message" placeholder="What part of your business feels manual or repetitive?" required></textarea>
           <button type="submit" class="btn" data-default-label="Request a Call" data-loading-label="Sending...">Request a Call</button>
         </form>

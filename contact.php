@@ -28,7 +28,9 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 $name = trim((string) ($_POST['name'] ?? ''));
 $email = trim((string) ($_POST['email'] ?? ''));
+$phone = trim((string) ($_POST['phone'] ?? ''));
 $businessName = trim((string) ($_POST['business_name'] ?? ''));
+$contactPreference = trim((string) ($_POST['contact_preference'] ?? 'Email'));
 $message = trim((string) ($_POST['message'] ?? ''));
 $website = trim((string) ($_POST['website'] ?? ''));
 $formStartedAt = (int) ($_POST['form_started_at'] ?? 0);
@@ -58,7 +60,7 @@ if (!is_file(SECRET_FILE) || !is_file(CONFIG_FILE)) {
 require SECRET_FILE;
 require CONFIG_FILE;
 
-if (!defined('MONDAY_API_TOKEN') || !defined('MONDAY_COLUMN_NAME') || !defined('MONDAY_COLUMN_EMAIL') || !defined('MONDAY_COLUMN_BUSINESS_NAME') || !defined('MONDAY_COLUMN_MESSAGE')) {
+if (!defined('MONDAY_API_TOKEN') || !defined('MONDAY_COLUMN_NAME') || !defined('MONDAY_COLUMN_EMAIL') || !defined('MONDAY_COLUMN_BUSINESS_NAME') || !defined('MONDAY_COLUMN_MESSAGE') || !defined('MONDAY_COLUMN_PHONE') || !defined('MONDAY_COLUMN_CONTACT_PREFERENCE')) {
     error_log('Monday form constants missing');
     fail();
 }
@@ -67,7 +69,9 @@ $itemName = $name !== '' ? $name : 'New website enquiry';
 $columnValues = [
     MONDAY_COLUMN_NAME => $name,
     MONDAY_COLUMN_EMAIL => ['email' => $email, 'text' => $email],
+    MONDAY_COLUMN_PHONE => $phone,
     MONDAY_COLUMN_BUSINESS_NAME => $businessName,
+    MONDAY_COLUMN_CONTACT_PREFERENCE => $contactPreference,
     MONDAY_COLUMN_MESSAGE => $message,
 ];
 
