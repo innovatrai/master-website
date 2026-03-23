@@ -5,4 +5,5 @@ deployment:
  - /bin/mkdir -p $DEPLOYPATH
  - /bin/cp index.html $DEPLOYPATH
  - /bin/cp index-v2.html $DEPLOYPATH
+ - /bin/cp contact.php $DEPLOYPATH
  - /bin/cp -R assets $DEPLOYPATH

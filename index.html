@@ -162,6 +162,24 @@
     .faq p { margin: 10px 0 0; color: var(--muted); }
     .cta-box { display: grid; grid-template-columns: .95fr 1.05fr; gap: 24px; padding: 28px; }
     .contact-form { display: grid; gap: 14px; }
+    .form-status {
+      display: none;
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+    }
+    .form-status.is-visible { display: block; }
+    .form-status.is-success {
+      background: rgba(44, 182, 125, 0.12);
+      border-color: rgba(44, 182, 125, 0.35);
+    }
+    .form-status.is-error {
+      background: rgba(255, 107, 107, 0.12);
+      border-color: rgba(255, 107, 107, 0.35);
+    }
     input, textarea {
       width: 100%; border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px;
       font: inherit; color: var(--text); background: rgba(255,255,255,0.04);
@@ -417,13 +435,14 @@
           <p class="subtext">We’ll look at your business, identify practical AI opportunities, and show you what should be automated first.</p>
           <p class="small">Best fit: Perth service businesses and small business owners who want practical improvement, not hype.</p>
         </div>
-        <form class="contact-form">
-          <input type="text" placeholder="Your name" />
-          <input type="email" placeholder="Email address" />
-          <input type="text" placeholder="Business name" />
-          <textarea placeholder="What part of your business feels manual or repetitive?"></textarea>
+        <form class="contact-form" action="contact.php" method="post">
+          <input type="text" name="name" placeholder="Your name" required />
+          <input type="email" name="email" placeholder="Email address" required />
+          <input type="text" name="business_name" placeholder="Business name" />
+          <textarea name="message" placeholder="What part of your business feels manual or repetitive?" required></textarea>
           <button type="submit" class="btn">Request a Call</button>
         </form>
+        <div id="form-status" class="form-status" aria-live="polite"></div>
       </div>
     </section>
   </main>
@@ -434,5 +453,22 @@
       <p>AI automation for Perth small businesses.</p>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const status = document.getElementById('form-status');
+      if (!status) return;
+
+      const formState = params.get('form');
+      if (formState === 'success') {
+        status.textContent = 'Thanks — your request has been sent. We will be in touch soon.';
+        status.className = 'form-status is-visible is-success';
+      } else if (formState === 'error') {
+        status.textContent = 'Something went wrong sending your request. Please try again or email us directly.';
+        status.className = 'form-status is-visible is-error';
+      }
+    })();
+  </script>
 </body>
 </html>
