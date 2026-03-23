@@ -239,6 +239,40 @@
     .step p { margin: 0; color: var(--muted); }
     .how-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 24px; align-items: center; }
     .side-illustration { padding: 22px; background: rgba(255,255,255,0.04); border: 1px solid var(--line); border-radius: 22px; }
+    .process-animated-svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .process-animated-svg .flow-line {
+      stroke-dasharray: 120;
+      stroke-dashoffset: 120;
+      animation: drawFlow 6.2s ease-in-out infinite;
+    }
+    .process-animated-svg .flow-line.delay-2 { animation-delay: .9s; }
+    .process-animated-svg .flow-line.delay-3 { animation-delay: 1.8s; }
+    .process-animated-svg .flow-line.delay-4 { animation-delay: 2.7s; }
+    .process-animated-svg .node {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: nodePulse 6.2s ease-in-out infinite;
+    }
+    .process-animated-svg .node.n2 { animation-delay: .9s; }
+    .process-animated-svg .node.n3 { animation-delay: 1.8s; }
+    .process-animated-svg .node.n4 { animation-delay: 2.7s; }
+    .process-animated-svg .node.n5 { animation-delay: 3.6s; }
+    .process-animated-svg .mini-bar {
+      opacity: .25;
+      animation: barGlow 6.2s ease-in-out infinite;
+    }
+    .process-animated-svg .mini-bar.b2 { animation-delay: 1.8s; }
+    .process-animated-svg .mini-bar.b3 { animation-delay: 2.7s; }
+    .process-animated-svg .mini-bar.b4 { animation-delay: 3.6s; }
+    .process-animated-svg .tick-mark {
+      stroke-dasharray: 28;
+      stroke-dashoffset: 28;
+      animation: tickReveal 6.2s ease-in-out infinite;
+    }
     .feature-panel { padding: 26px; }
     .feature-list { display: grid; gap: 14px; }
     .feature-item { padding: 16px; border-radius: 16px; background: rgba(255,255,255,0.04); border: 1px solid var(--line); }
@@ -316,6 +350,26 @@
     @keyframes drift {
       0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
       50% { transform: translate3d(18px, -24px, 0) scale(1.06); }
+    }
+    @keyframes drawFlow {
+      0%, 8% { stroke-dashoffset: 120; opacity: .18; }
+      18%, 78% { stroke-dashoffset: 0; opacity: 1; }
+      100% { stroke-dashoffset: 0; opacity: .2; }
+    }
+    @keyframes nodePulse {
+      0%, 10% { transform: scale(1); opacity: .72; }
+      18%, 28% { transform: scale(1.12); opacity: 1; }
+      36%, 100% { transform: scale(1); opacity: .88; }
+    }
+    @keyframes barGlow {
+      0%, 18% { opacity: .18; }
+      26%, 82% { opacity: .9; }
+      100% { opacity: .25; }
+    }
+    @keyframes tickReveal {
+      0%, 62% { stroke-dashoffset: 28; opacity: 0; }
+      72%, 88% { stroke-dashoffset: 0; opacity: 1; }
+      100% { stroke-dashoffset: 0; opacity: .92; }
     }
     @media (max-width: 920px) {
       .hero-grid, .three-up, .two-up, .how-grid, .cta-box, .section-heading, .steps { grid-template-columns: 1fr; }
@@ -503,7 +557,34 @@
           </div>
         </div>
         <div class="side-illustration">
-          <img src="assets/process-flow.svg" alt="AI workflow automation process illustration" />
+          <svg class="process-animated-svg" viewBox="0 0 520 360" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Animated workflow from first step through to completed result">
+            <defs>
+              <linearGradient id="processGradient" x1="46" y1="60" x2="454" y2="309" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#4F7CFF"/>
+                <stop offset="1" stop-color="#7B61FF"/>
+              </linearGradient>
+            </defs>
+            <rect x="30" y="40" width="460" height="280" rx="30" fill="#F6F8FE"/>
+            <rect x="56" y="92" width="96" height="84" rx="22" fill="white"/>
+            <rect x="212" y="92" width="96" height="84" rx="22" fill="white"/>
+            <rect x="368" y="92" width="96" height="84" rx="22" fill="white"/>
+            <rect x="134" y="222" width="96" height="84" rx="22" fill="white"/>
+            <rect x="290" y="222" width="96" height="84" rx="22" fill="white"/>
+            <path class="flow-line delay-1" d="M152 134H212" stroke="url(#processGradient)" stroke-width="8" stroke-linecap="round"/>
+            <path class="flow-line delay-2" d="M308 134H368" stroke="url(#processGradient)" stroke-width="8" stroke-linecap="round"/>
+            <path class="flow-line delay-3" d="M416 176V212H338" stroke="url(#processGradient)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path class="flow-line delay-4" d="M182 222V196" stroke="url(#processGradient)" stroke-width="8" stroke-linecap="round"/>
+            <circle class="node n1" cx="104" cy="134" r="20" fill="#EAF0FF"/>
+            <circle class="node n2" cx="260" cy="134" r="20" fill="#EAF0FF"/>
+            <circle class="node n3" cx="416" cy="134" r="20" fill="#EAF0FF"/>
+            <circle class="node n4" cx="182" cy="264" r="20" fill="#EAF0FF"/>
+            <circle class="node n5" cx="338" cy="264" r="20" fill="#EAF0FF"/>
+            <path class="tick-mark" d="M95 134L101 140L114 127" stroke="#4F7CFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect class="mini-bar b1" x="242" y="126" width="36" height="16" rx="8" fill="#4F7CFF" fill-opacity="0.2"/>
+            <rect class="mini-bar b2" x="398" y="126" width="36" height="16" rx="8" fill="#4F7CFF" fill-opacity="0.2"/>
+            <rect class="mini-bar b3" x="164" y="256" width="36" height="16" rx="8" fill="#4F7CFF" fill-opacity="0.2"/>
+            <rect class="mini-bar b4" x="320" y="256" width="36" height="16" rx="8" fill="#4F7CFF" fill-opacity="0.2"/>
+          </svg>
         </div>
       </div>
     </section>
