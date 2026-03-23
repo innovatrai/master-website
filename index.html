@@ -87,6 +87,59 @@
       background: linear-gradient(180deg, #0b1020 0%, #0d1324 100%);
       line-height: 1.6;
       overflow-x: hidden;
+      position: relative;
+    }
+    .bg-animation {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      overflow: hidden;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 42%, rgba(0,0,0,0.55) 68%, rgba(0,0,0,0) 100%);
+    }
+    #particles {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+    }
+    .orb {
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(24px);
+      opacity: 0.55;
+      animation: drift 18s ease-in-out infinite;
+    }
+    .orb-1 {
+      width: 340px;
+      height: 340px;
+      background: rgba(79, 124, 255, 0.22);
+      top: 40px;
+      left: -60px;
+    }
+    .orb-2 {
+      width: 300px;
+      height: 300px;
+      background: rgba(79, 124, 255, 0.16);
+      top: 180px;
+      right: -80px;
+      animation-duration: 22s;
+    }
+    .orb-3 {
+      width: 240px;
+      height: 240px;
+      background: rgba(79, 124, 255, 0.14);
+      top: 320px;
+      left: 20%;
+      animation-duration: 20s;
+    }
+    .grid {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(79,124,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(79,124,255,0.05) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: radial-gradient(circle at center, black 20%, transparent 75%);
     }
     a { color: inherit; text-decoration: none; }
     .container { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
@@ -230,6 +283,10 @@
     .footer { padding: 26px 0 40px; color: var(--muted); }
     .footer-row { display: flex; justify-content: space-between; gap: 16px; }
     .small { font-size: .95rem; color: var(--muted); }
+    @keyframes drift {
+      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+      50% { transform: translate3d(18px, -24px, 0) scale(1.06); }
+    }
     @media (max-width: 920px) {
       .hero-grid, .three-up, .two-up, .how-grid, .cta-box, .section-heading, .steps { grid-template-columns: 1fr; }
       nav { display: none; }
@@ -244,6 +301,13 @@
   </style>
 </head>
 <body>
+  <div class="bg-animation" aria-hidden="true">
+    <canvas id="particles"></canvas>
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+    <span class="grid"></span>
+  </div>
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="#top">innovatr<span>.ai</span></a>
@@ -503,6 +567,118 @@
 
   <script>
     (function () {
+      const canvas = document.getElementById('particles');
+      const ctx = canvas ? canvas.getContext('2d') : null;
+      let particles = [];
+      let w = 0;
+      let h = 0;
+      let dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const mouse = { x: null, y: null, active: false };
+
+      function resizeParticles() {
+        if (!canvas || !ctx) return;
+        w = window.innerWidth;
+        h = window.innerHeight;
+        canvas.width = w * dpr;
+        canvas.height = h * dpr;
+        canvas.style.width = w + 'px';
+        canvas.style.height = h + 'px';
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        createParticles();
+      }
+
+      function createParticles() {
+        const count = Math.max(90, Math.floor(w / 14));
+        particles = Array.from({ length: count }, function () {
+          return {
+            x: Math.random() * w,
+            y: 76 + (Math.random() * Math.min(h, 420)),
+            vx: (Math.random() - 0.5) * 0.55,
+            vy: (Math.random() - 0.5) * 0.45,
+            r: Math.random() * 2.8 + 1.1
+          };
+        });
+      }
+
+      function drawParticles() {
+        if (!canvas || !ctx) return;
+        ctx.clearRect(0, 0, w, h);
+
+        for (const p of particles) {
+          p.x += p.vx;
+          p.y += p.vy;
+
+          if (mouse.active && mouse.x !== null && mouse.y !== null) {
+            const dx = mouse.x - p.x;
+            const dy = mouse.y - p.y;
+            const dist = Math.hypot(dx, dy);
+            if (dist < 180 && dist > 0) {
+              const force = (180 - dist) / 180;
+              p.x -= (dx / dist) * force * 2.6;
+              p.y -= (dy / dist) * force * 2.1;
+            }
+          }
+
+          if (p.x < 0 || p.x > w) p.vx *= -1;
+          if (p.y < 0 || p.y > h) p.vy *= -1;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(79, 124, 255, 0.88)';
+          ctx.fill();
+        }
+
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const a = particles[i];
+            const b = particles[j];
+            const dx = a.x - b.x;
+            const dy = a.y - b.y;
+            const dist = Math.hypot(dx, dy);
+
+            if (dist < 150) {
+              ctx.beginPath();
+              ctx.moveTo(a.x, a.y);
+              ctx.lineTo(b.x, b.y);
+              ctx.strokeStyle = 'rgba(79, 124, 255, ' + (0.42 * (1 - dist / 150)) + ')';
+              ctx.lineWidth = 1;
+              ctx.stroke();
+            }
+          }
+
+          if (mouse.active && mouse.x !== null && mouse.y !== null) {
+            const p = particles[i];
+            const mdx = p.x - mouse.x;
+            const mdy = p.y - mouse.y;
+            const mdist = Math.hypot(mdx, mdy);
+            if (mdist < 220) {
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(mouse.x, mouse.y);
+              ctx.strokeStyle = 'rgba(79, 124, 255, ' + (0.56 * (1 - mdist / 220)) + ')';
+              ctx.lineWidth = 1;
+              ctx.stroke();
+            }
+          }
+        }
+
+        window.requestAnimationFrame(drawParticles);
+      }
+
+      window.addEventListener('mousemove', function (e) {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+        mouse.active = true;
+      });
+
+      window.addEventListener('mouseleave', function () {
+        mouse.active = false;
+      });
+
+      window.addEventListener('resize', resizeParticles);
+      resizeParticles();
+      drawParticles();
+
       const params = new URLSearchParams(window.location.search);
       const status = document.getElementById('form-status');
       const startedAt = document.getElementById('form-started-at');
